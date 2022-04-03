@@ -4,13 +4,14 @@ import sys
 
 직업 = ['목수', '대장', '갑주', '보석', '가죽', '재봉', '연금', '요리']
 
-wb = openpyxl.load_workbook('../../docs/제작수첩DB.xlsx')
+wb = openpyxl.load_workbook('./docs/제작수첩DB.xlsx')
 
 #TotMat = []
 mdb = Materials()
 
+# PRE-SCAN items
 for sheet in wb:
-    print("### ", sheet.title, sheet.max_row, sheet.max_column)
+    #print("### ", sheet.title, sheet.max_row, sheet.max_column)
 
     #mdb = Materials(sheet.max_row, sheet.title)
     mdb.insert(sheet.max_row, sheet.title)
